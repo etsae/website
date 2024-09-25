@@ -431,48 +431,15 @@ body {
 }
 
 /* Gallery Styles */
-.swiper-container {
-    width: 100%;
-    height: 200px; /* Adjust as needed */
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.gallery-category {
-    margin-bottom: 50px;
-}
-
-#partners img {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-.swiper-slide a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide img {
-    transition: transform 0.3s ease;
-}
-
-.swiper-slide:hover img {
-    transform: scale(1.05);
-}
-
 .gallery-category {
     background-color: #f8f9fa;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    height: 100%; /* Ensure all categories have the same height */
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-category:hover {
@@ -486,20 +453,51 @@ body {
     color: white;
 }
 
+.swiper {
+    width: 100%;
+    height: 200px; /* Fixed height for all swipers */
+    flex-grow: 1;
+}
+
+.swiper-slide {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Changed from cover to contain */
+}
+
 .gallery-category p {
     padding: 15px;
     margin-bottom: 0;
 }
 
-#partners img {
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
+/* Ensure Swiper styles are only applied to the gallery section */
+#gallery .swiper-button-next,
+#gallery .swiper-button-prev,
+#gallery .swiper-pagination {
     display: block;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
 }
 
-#partners img:hover {
-    filter: grayscale(0%);
+/* Hide Swiper elements outside the gallery section */
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+    display: none;
+}
+
+/* Additional styles to fix potential layout issues */
+#hero {
+    position: relative;
+    overflow: hidden;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
 }
