@@ -130,6 +130,8 @@
                     <div class="swiper-slide"><img src="assets/img/partners/partners-9.png" alt="Partner 9" class="img-fluid"></div>
                     <div class="swiper-slide"><img src="assets/img/partners/partners-10.jpg" alt="Partner 10" class="img-fluid"></div>
                     <div class="swiper-slide"><img src="assets/img/partners/partners-11.jpg" alt="Partner 11" class="img-fluid"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-12.png" alt="Partner 12" class="img-fluid"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-13.png" alt="Partner 13" class="img-fluid"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -143,6 +145,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script>
         // Load header and footer
@@ -306,7 +309,7 @@
             },
         ];
 
-        // Updated function to generate gallery HTML for grid layout
+        // Function to generate gallery HTML
         function generateGallery() {
             const galleryContainer = document.getElementById('gallery-container');
             let galleryHtml = '';
@@ -360,22 +363,46 @@
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-                    // Add this to ensure images are loaded correctly
                     preloadImages: false,
                     lazy: true,
-                    // Ensure proper resizing on window changes
                     observer: true,
                     observeParents: true,
                 });
             });
 
+            // Initialize Fancybox with updated options
             Fancybox.bind("[data-fancybox]", {
-                // Your custom options
+                touch: {
+                    vertical: true,
+                    momentum: true
+                },
+                breakpoints: {
+                    '(max-width: 640px)': {
+                        idleTime: false,
+                        clickContent: 'close',
+                        clickSlide: 'close',
+                        dblclickContent: 'zoom',
+                        dblclickSlide: 'zoom',
+                    },
+                },
+                Image: {
+                    zoom: true,
+                    fit: 'contain', // Ensures the image fits within the viewport
+                    maxWidth: '100%',  // Added to restrict the maximum width
+                    maxHeight: '100%', // Added to restrict the maximum height
+                },
+                Toolbar: {
+                    display: {
+                        left: [],
+                        middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
+                        right: ['slideshow', 'thumbs', 'close']
+                    }
+                }
             });
 
             // Initialize partners Swiper
             new Swiper('.partners-swiper', {
-                slidesPerView: 5,
+                slidesPerView: 'auto',
                 spaceBetween: 30,
                 loop: true,
                 autoplay: {
