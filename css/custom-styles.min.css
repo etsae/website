@@ -163,3 +163,20 @@ body {
     display: flex;
     align-items: center;
 }
+
+#trusted-brands .section-heading {
+    margin-bottom: 2rem;
+}
+
+#trusted-brands .divider-custom {
+    margin-bottom: 2rem;
+}
+
+#trusted-brands .service-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#trusted-brands .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
