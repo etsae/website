@@ -1,44 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Existing meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Top-quality industrial and commercial refrigeration solutions for various industries, ensuring optimal temperature control and efficiency." />
     <meta name="author" content="ETS" />
     <title>Industrial and Commercial Refrigeration - ETS</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- External Libraries -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    
     <link href="css/styles.min.css" rel="stylesheet" />
     <link href="css/custom-styles.min.css" rel="stylesheet" />
-    <style>
-        @media (max-width: 640px) {
-            /* Center the Fancybox content */
-            .fancybox__content {
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-            }
-
-            /* Optimize the Fancybox image */
-            .fancybox__image {
-                width: auto !important;
-                max-width: 100% !important;
-                height: auto !important;
-                max-height: 100% !important;
-                margin: 0 auto !important;
-            }
-
-            /* Optional: Adjust toolbar for small screens */
-            .fancybox__toolbar {
-                flex-direction: column !important;
-                gap: 10px !important;
-            }
-        }
-    </style>
 </head>
 <body id="page-top">
     <div id="header-placeholder"></div>
@@ -169,8 +147,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script>
         // Load header and footer
@@ -348,7 +324,7 @@
                                 <div class="swiper-wrapper">
                                     ${category.images.map(img => `
                                         <div class="swiper-slide">
-                                            <a href="${img}" data-fancybox="gallery-${index}">
+                                            <a href="#" class="gallery-image" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="${img}">
                                                 <div class="image-wrapper">
                                                     <img src="${img}" alt="${category.title}" loading="lazy" width="600" height="400">
                                                 </div>
@@ -369,7 +345,7 @@
             galleryContainer.innerHTML = galleryHtml;
         }
 
-        // Initialize gallery, Swiper, and Fancybox
+        // Initialize gallery, Swiper, and custom Modal
         document.addEventListener('DOMContentLoaded', function() {
             generateGallery();
 
@@ -395,34 +371,113 @@
                 });
             });
 
-            // Initialize Fancybox with updated options
-            Fancybox.bind("[data-fancybox]", {
-                touch: {
-                    vertical: true,
-                    momentum: true
-                },
-                breakpoints: {
-                    '(max-width: 640px)': {
-                        idleTime: false,
-                        clickContent: 'close',
-                        clickSlide: 'close',
-                        dblclickContent: 'zoom',
-                        dblclickSlide: 'zoom',
-                    },
-                },
-                Image: {
-                    zoom: true,
-                    fit: 'contain', // Ensures the image fits within the viewport
-                    maxWidth: '100%',  // Restricts the maximum width
-                    maxHeight: '100%', // Restricts the maximum height
-                },
-                Toolbar: {
-                    display: {
-                        left: [],
-                        middle: ['zoomIn', 'zoomOut', 'toggle1to1', 'rotateCCW', 'rotateCW', 'flipX', 'flipY'],
-                        right: ['slideshow', 'thumbs', 'close']
+            // Initialize custom Modal for image viewing
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = imageModal.querySelector('.modal-title');
+            let currentImageIndex = 0;
+            let currentCategory = null;
+
+            imageModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const imgSrc = button.getAttribute('data-img-src');
+                modalImage.src = imgSrc;
+
+                // Find current category and image index
+                currentCategory = galleryData.find(category => category.images.includes(imgSrc));
+                currentImageIndex = currentCategory.images.indexOf(imgSrc);
+                modalTitle.textContent = currentCategory.title;
+            });
+
+            // Navigation buttons
+            const prevButton = imageModal.querySelector('.btn-prev');
+            const nextButton = imageModal.querySelector('.btn-next');
+
+            prevButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + currentCategory.images.length) % currentCategory.images.length;
+                modalImage.src = currentCategory.images[currentImageIndex];
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % currentCategory.images.length;
+                modalImage.src = currentCategory.images[currentImageIndex];
+            });
+
+            // Zoom functionality
+            const zoomButton = imageModal.querySelector('.btn-zoom');
+            let isZoomed = false;
+            let dragStart = { x: 0, y: 0 };
+
+            zoomButton.addEventListener('click', () => {
+                isZoomed = !isZoomed;
+                modalImage.classList.toggle('zoomed', isZoomed);
+                zoomButton.innerHTML = isZoomed ? '<i class="fas fa-search-minus"></i> Unzoom' : '<i class="fas fa-search-plus"></i> Zoom';
+            });
+
+            modalImage.addEventListener('mousedown', (e) => {
+                if (isZoomed) {
+                    dragStart.x = e.clientX - modalImage.offsetLeft;
+                    dragStart.y = e.clientY - modalImage.offsetTop;
+                    document.addEventListener('mousemove', drag);
+                    document.addEventListener('mouseup', stopDrag);
+                }
+            });
+
+            function drag(e) {
+                modalImage.style.left = (e.clientX - dragStart.x) + 'px';
+                modalImage.style.top = (e.clientY - dragStart.y) + 'px';
+            }
+
+            function stopDrag() {
+                document.removeEventListener('mousemove', drag);
+                document.removeEventListener('mouseup', stopDrag);
+            }
+
+            // Fullscreen functionality
+            const fullscreenButton = imageModal.querySelector('.btn-fullscreen');
+            let isFullscreen = false;
+
+            fullscreenButton.addEventListener('click', () => {
+                if (!isFullscreen) {
+                    if (imageModal.requestFullscreen) {
+                        imageModal.requestFullscreen();
+                    } else if (imageModal.mozRequestFullScreen) { // Firefox
+                        imageModal.mozRequestFullScreen();
+                    } else if (imageModal.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                        imageModal.webkitRequestFullscreen();
+                    } else if (imageModal.msRequestFullscreen) { // IE/Edge
+                        imageModal.msRequestFullscreen();
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.mozCancelFullScreen) { // Firefox
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                        document.webkitExitFullscreen();
+                    } else if (document.msExitFullscreen) { // IE/Edge
+                        document.msExitFullscreen();
                     }
                 }
+            });
+
+            document.addEventListener('fullscreenchange', updateFullscreenButton);
+            document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+            document.addEventListener('mozfullscreenchange', updateFullscreenButton);
+            document.addEventListener('MSFullscreenChange', updateFullscreenButton);
+
+            function updateFullscreenButton() {
+                isFullscreen = !isFullscreen;
+                fullscreenButton.innerHTML = isFullscreen ? '<i class="fas fa-compress"></i> Exit Fullscreen' : '<i class="fas fa-expand"></i> Fullscreen';
+            }
+
+            // Reset zoom and position when modal is hidden
+            imageModal.addEventListener('hidden.bs.modal', () => {
+                isZoomed = false;
+                modalImage.classList.remove('zoomed');
+                modalImage.style.left = '';
+                modalImage.style.top = '';
+                zoomButton.innerHTML = '<i class="fas fa-search-plus"></i> Zoom';
             });
 
             // Initialize partners Swiper
@@ -459,5 +514,34 @@
             });
         });
     </script>
+
+    <!-- Add this modal at the end of your body, before the closing </body> tag -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-body position-relative p-0">
+            <img src="" id="modalImage" class="img-fluid w-100" alt="Modal Image">
+            <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-nav">
+              <button class="btn btn-nav btn-prev" aria-label="Previous image">&lt;</button>
+              <button class="btn btn-nav btn-next" aria-label="Next image">&gt;</button>
+            </div>
+            <div class="modal-controls position-absolute bottom-0 start-0 w-100 p-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <h5 class="modal-title text-white m-0" id="imageModalLabel">Image Preview</h5>
+                <div>
+                  <button type="button" class="btn btn-light btn-sm btn-zoom me-2">
+                    <i class="fas fa-search-plus"></i> Zoom
+                  </button>
+                  <button type="button" class="btn btn-light btn-sm btn-fullscreen">
+                    <i class="fas fa-expand"></i> Fullscreen
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
