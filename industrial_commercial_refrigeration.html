@@ -14,6 +14,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link href="css/styles.min.css" rel="stylesheet" />
     <link href="css/custom-styles.min.css" rel="stylesheet" />
+    <style>
+        @media (max-width: 640px) {
+            /* Center the Fancybox content */
+            .fancybox__content {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+
+            /* Optimize the Fancybox image */
+            .fancybox__image {
+                width: auto !important;
+                max-width: 100% !important;
+                height: auto !important;
+                max-height: 100% !important;
+                margin: 0 auto !important;
+            }
+
+            /* Optional: Adjust toolbar for small screens */
+            .fancybox__toolbar {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+        }
+    </style>
 </head>
 <body id="page-top">
     <div id="header-placeholder"></div>
@@ -325,7 +350,7 @@
                                         <div class="swiper-slide">
                                             <a href="${img}" data-fancybox="gallery-${index}">
                                                 <div class="image-wrapper">
-                                                    <img src="${img}" alt="${category.title}" loading="lazy">
+                                                    <img src="${img}" alt="${category.title}" loading="lazy" width="600" height="400">
                                                 </div>
                                             </a>
                                         </div>
@@ -388,8 +413,8 @@
                 Image: {
                     zoom: true,
                     fit: 'contain', // Ensures the image fits within the viewport
-                    maxWidth: '100%',  // Added to restrict the maximum width
-                    maxHeight: '100%', // Added to restrict the maximum height
+                    maxWidth: '100%',  // Restricts the maximum width
+                    maxHeight: '100%', // Restricts the maximum height
                 },
                 Toolbar: {
                     display: {
