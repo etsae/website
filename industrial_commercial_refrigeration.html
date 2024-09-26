@@ -360,10 +360,12 @@
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     },
-                    effect: 'fade',
-                    fadeEffect: {
-                        crossFade: true
-                    },
+                    // Add this to ensure images are loaded correctly
+                    preloadImages: false,
+                    lazy: true,
+                    // Ensure proper resizing on window changes
+                    observer: true,
+                    observeParents: true,
                 });
             });
 
