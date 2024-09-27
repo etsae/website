@@ -17,18 +17,29 @@
     <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <!-- Masthead -->
-    <header class="masthead">
-        <div class="container">
-            <div class="masthead-content">
-                <h1 class="masthead-heading">Solutions Well Engineered</h1>
-                <p class="masthead-subheading">Engineering Solutions for Industries, Petrochemicals, Pharmaceuticals, F&B, and more</p>
-                <a href="#services" class="btn btn-primary btn-xl">Learn More</a>
+    <!-- Redesigned Hero Section -->
+    <header class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-heading">Solutions Well Engineered</h1>
+            <p class="hero-subheading">Engineering Solutions for Industries, Petrochemicals, Pharmaceuticals, F&B, and more</p>
+            <a href="#services" class="btn btn-xl" aria-label="Explore Our Services">Explore Our Services</a>
+        </div>
+        <div class="hero-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/img/gallery/01-equipment-7.jpg" alt="Industrial Refrigeration Equipment" class="img-fluid" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/img/services/well_drilling.jpg" alt="Engineered Solutions" class="img-fluid" loading="lazy">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/img/services/water_pumps.jpg" alt="Pharmaceutical Engineering" class="img-fluid" loading="lazy">
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <!-- Services Section -->
     <section class="services-section" id="services">
         <div class="container">
@@ -36,34 +47,69 @@
             <p class="section-subheading">Discover our range of specialized engineering solutions</p>
             <div class="divider-custom">
                 <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-icon"><i class="fas fa-cog"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
             <div class="services-grid">
-                <div class="service-item">
-                    <img src="assets/img/gallery/01-equipment-7.jpg" alt="Industrial and Commercial Refrigeration">
-                    <h4>Industrial and Commercial Refrigeration</h4>
-                    <p>Providing top-notch refrigeration solutions for various industrial and commercial needs.</p>
-                    <a href="industrial_commercial_refrigeration.html" class="btn btn-primary">Read More</a>
+                <div class="service-card">
+                    <div class="service-hero" style="background-image: url('assets/img/gallery/01-equipment-7.jpg');">
+                        <h3>Industrial and Commercial Refrigeration</h3>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-snowflake service-icon"></i>
+                        <p>Providing top-notch refrigeration solutions for various industrial and commercial needs.</p>
+                        <ul class="service-details">
+                            <li>Custom cooling systems</li>
+                            <li>Energy-efficient solutions</li>
+                            <li>24/7 maintenance support</li>
+                        </ul>
+                        <a href="industrial_commercial_refrigeration.html" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <img src="assets/img/services/water_pumps.jpg" alt="Water Pumps">
-                    <h4>Water Pumps</h4>
-                    <p>High-quality water pumps for efficient water management in various applications.</p>
-                    <a href="water_pumps.html" class="btn btn-primary">Read More</a>
+                <div class="service-card">
+                    <div class="service-hero" style="background-image: url('assets/img/services/water_pumps.jpg');">
+                        <h3>Water Pumps</h3>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-tint service-icon"></i>
+                        <p>High-quality water pumps for efficient water management in various applications.</p>
+                        <ul class="service-details">
+                            <li>Industrial-grade pumps</li>
+                            <li>Smart water management</li>
+                            <li>Customized solutions</li>
+                        </ul>
+                        <a href="water_pumps.html" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <img src="assets/img/services/well_drilling.jpg" alt="Well Drilling">
-                    <h4>Well Drilling</h4>
-                    <p>Expert well drilling services for reliable water access in challenging environments.</p>
-                    <a href="well_drilling.html" class="btn btn-primary">Read More</a>
+                <div class="service-card">
+                    <div class="service-hero" style="background-image: url('assets/img/services/well_drilling.jpg');">
+                        <h3>Well Drilling</h3>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-drill service-icon"></i>
+                        <p>Expert well drilling services for reliable water access in challenging environments.</p>
+                        <ul class="service-details">
+                            <li>Advanced drilling technology</li>
+                            <li>Geological surveys</li>
+                            <li>Sustainable water solutions</li>
+                        </ul>
+                        <a href="well_drilling.html" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
-                <!-- New Pivots Service Item -->
-                <div class="service-item">
-                    <img src="assets/img/services/pivots.jpg" alt="Pivots">
-                    <h4>Pivots</h4>
-                    <p>Advanced pivot systems for efficient and reliable operation in various industrial applications.</p>
-                    <a href="pivots.html" class="btn btn-primary">Read More</a>
+                <div class="service-card">
+                    <div class="service-hero" style="background-image: url('assets/img/services/pivots.jpg');">
+                        <h3>Pivots</h3>
+                    </div>
+                    <div class="service-content">
+                        <i class="fas fa-sync-alt service-icon"></i>
+                        <p>Advanced pivot systems for efficient and reliable operation in various industrial applications.</p>
+                        <ul class="service-details">
+                            <li>Precision irrigation</li>
+                            <li>Remote monitoring</li>
+                            <li>Durable construction</li>
+                        </ul>
+                        <a href="pivots.html" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,38 +127,32 @@
             </div>
             <div class="about-content">
                 <p>Engineering Trading Solutions (ETS) is a leading provider of specialized engineering solutions and top-quality products for the industrial sector. With a focus on refrigeration systems, water management, and well drilling, we offer well-engineered solutions that enhance efficiency and productivity for our clients across various industries. Our commitment is to deliver innovative, high-quality products and solutions that meet the unique challenges of each project, ensuring optimal performance and reliability.</p>
-                <a href="about.html" class="btn btn-primary btn-xl mt-4">Learn More About Us</a>
             </div>
         </div>
     </section>
 
     <!-- Add this section just before the Contact Section -->
-    <section class="page-section bg-light" id="partners">
+    <section class="partners-section" id="partners">
         <div class="container">
-            <h2 class="section-heading text-center text-uppercase text-secondary mb-0">Our Trusted Partners</h2>
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fas fa-handshake"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <p class="lead text-center mb-5">We collaborate with industry leaders to deliver exceptional solutions.</p>
+            <h2 class="section-heading text-center">Our Trusted Partners</h2>
+            <p class="section-subheading text-center">We collaborate with industry leaders to deliver exceptional solutions.</p>
             <div class="partners-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-1.png" alt="Partner 1" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-2.jpg" alt="Partner 2" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-3.jpg" alt="Partner 3" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-4.png" alt="Partner 4" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-5.png" alt="Partner 5" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-6.jpg" alt="Partner 6" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-7.jpg" alt="Partner 7" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-8.jpg" alt="Partner 8" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-9.png" alt="Partner 9" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-10.jpg" alt="Partner 10" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-11.jpg" alt="Partner 11" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-12.png" alt="Partner 12" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/partners/partners-13.png" alt="Partner 13" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/brands/valley-logo.png" alt="Valley" class="img-fluid"></div>
-                    <div class="swiper-slide"><img src="assets/img/brands/vansan-logo.png" alt="Vansan" class="img-fluid"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-1.png" alt="Partner 1" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-2.jpg" alt="Partner 2" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-3.jpg" alt="Partner 3" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-4.png" alt="Partner 4" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-5.png" alt="Partner 5" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-6.jpg" alt="Partner 6" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-7.jpg" alt="Partner 7" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-8.jpg" alt="Partner 8" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-9.png" alt="Partner 9" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-10.jpg" alt="Partner 10" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-11.jpg" alt="Partner 11" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-12.png" alt="Partner 12" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/partners/partners-13.png" alt="Partner 13" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/brands/valley-logo.png" alt="Valley" class="img-fluid" loading="lazy"></div>
+                    <div class="swiper-slide"><img src="assets/img/brands/vansan-logo.png" alt="Vansan" class="img-fluid" loading="lazy"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -159,11 +199,11 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 // Activate the current page's nav item
-                const currentPage = window.location.pathname;
+                const currentPage = window.location.pathname.split("/").pop();
                 const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
                 navLinks.forEach(link => {
                     if (link.getAttribute('href') === currentPage || 
-                        (currentPage === '/' && link.getAttribute('href') === 'index.html')) {
+                        (currentPage === '' && link.getAttribute('href') === 'index.html')) {
                         link.classList.add('active');
                         if (link.classList.contains('dropdown-item')) {
                             link.closest('.nav-item').querySelector('.nav-link').classList.add('active');
@@ -176,7 +216,6 @@
             .then(response => response.text())
             .then(data => document.getElementById('footer-placeholder').innerHTML = data);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize partners Swiper
@@ -210,6 +249,24 @@
                         spaceBetween: 50
                     }
                 }
+            });
+
+            // Initialize redesigned hero Swiper
+            new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 7000,
+                    disableOnInteraction: false,
+                },
+                speed: 1500,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
             });
         });
     </script>

@@ -7,30 +7,29 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto me-3">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#services">Services</a>
+                    <a class="nav-link" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#about">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#contact">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" tabindex="0">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                         Solutions
-                        <span class="dropdown-indicator ms-1"><i class="fas fa-caret-down"></i></span>
+                        <span class="dropdown-indicator ms-1"><i class="fas fa-chevron-down"></i></span>
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
-                        <li><a class="dropdown-item" href="industrial_commercial_refrigeration.html" role="menuitem" tabindex="-1">Industrial and Commercial Refrigeration</a></li>
-                        <li><a class="dropdown-item" href="water_pumps.html" role="menuitem" tabindex="-1">Water Pumps</a></li>
-                        <li><a class="dropdown-item" href="well_drilling.html" role="menuitem" tabindex="-1">Well Drilling</a></li>
-                        <li><a class="dropdown-item" href="pivots.html" role="menuitem" tabindex="-1">Pivots</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="industrial_commercial_refrigeration.html">Industrial and Commercial Refrigeration</a></li>
+                        <li><a class="dropdown-item" href="water_pumps.html">Water Pumps</a></li>
+                        <li><a class="dropdown-item" href="well_drilling.html">Well Drilling</a></li>
+                        <li><a class="dropdown-item" href="pivots.html">Pivots</a></li>
                     </ul>
                 </li>
             </ul>
-            <!-- Search Form Removed -->
         </div>
     </div>
 </nav>
@@ -73,5 +72,20 @@
                 behavior: "smooth"
             });
         });
+    });
+
+    // Add hover effect to nav items
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.classList.add('nav-item-hover');
+        });
+        item.addEventListener('mouseleave', function() {
+            this.classList.remove('nav-item-hover');
+        });
+    });
+
+    // Animate logo on page load
+    window.addEventListener('load', function() {
+        document.querySelector('.logo-text').classList.add('logo-animate');
     });
 </script>
