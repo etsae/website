@@ -7,15 +7,26 @@
     <meta name="author" content="ETS" />
     <title>Well Drilling and Installation Services - ETS</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.fontawesome.com">
+
+    <!-- External Libraries -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" type="text/css" />
+
     <link href="css/styles.min.css" rel="stylesheet" />
-    <link href="css/custom-styles.min.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+
 </head>
 <body id="page-top">
+    <!-- Header -->
     <div id="header-placeholder"></div>
 
+    <!-- Hero Section -->
     <section class="hero-section" id="hero">
         <div class="hero-image" style="background-image: url('assets/img/well-drilling/well-drilling.jpg');"></div>
         <div class="hero-overlay"></div>
@@ -28,7 +39,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <p class="hero-subheading">Expert well drilling and installation services for reliable water access across various industries.</p>
-                <a href="#services" class="btn btn-xl btn-outline-light">
+                <a href="#services" class="btn btn-xl btn-outline-light" aria-label="Explore Our Services">
                     Explore Our Services
                     <i class="fas fa-chevron-right ms-2"></i>
                 </a>
@@ -36,6 +47,7 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="page-section bg-light" id="services">
         <div class="container">
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our Services</h2>
@@ -45,9 +57,10 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="row g-4">
+                <!-- Service Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/well-drilling.jpg" alt="Well Drilling" class="service-image">
+                        <img src="assets/img/well-drilling/well-drilling.jpg" alt="Well Drilling" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-drill service-icon"></i>
                             <h4 class="service-title">Well Drilling</h4>
@@ -60,9 +73,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Service Card 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/pump-installation.jpg" alt="Pump Installation" class="service-image">
+                        <img src="assets/img/well-drilling/pump-installation.jpg" alt="Pump Installation" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-pump-soap service-icon"></i>
                             <h4 class="service-title">Pump Installation</h4>
@@ -75,9 +89,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Service Card 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/water-quality-testing.jpg" alt="Water Quality Testing" class="service-image">
+                        <img src="assets/img/well-drilling/water-quality-testing.jpg" alt="Water Quality Testing" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-tint service-icon"></i>
                             <h4 class="service-title">Water Quality Testing</h4>
@@ -90,9 +105,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Service Card 4 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/submersible-pumps.jpg" alt="Submersible Pumps" class="service-image">
+                        <img src="assets/img/well-drilling/submersible-pumps.jpg" alt="Submersible Pumps" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-water service-icon"></i>
                             <h4 class="service-title">Submersible Pumps</h4>
@@ -105,9 +121,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Service Card 5 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/water-well-drilling.jpg" alt="Water Well Drilling" class="service-image">
+                        <img src="assets/img/well-drilling/water-well-drilling.jpg" alt="Water Well Drilling" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-hard-hat service-icon"></i>
                             <h4 class="service-title">Water Well Drilling</h4>
@@ -120,9 +137,10 @@
                         </div>
                     </div>
                 </div>
+                <!-- Service Card 6 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
-                        <img src="assets/img/well-drilling/pump-maintenance.jpg" alt="Pump Maintenance" class="service-image">
+                        <img src="assets/img/well-drilling/pump-maintenance.jpg" alt="Pump Maintenance" class="service-image" loading="lazy">
                         <div class="service-content">
                             <i class="fas fa-wrench service-icon"></i>
                             <h4 class="service-title">Pump Maintenance</h4>
@@ -139,28 +157,44 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-envelope"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7 text-center">
+                    <p class="lead mb-5">For inquiries about our Vansan water pump solutions, please contact us using the information below:</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope me-2"></i> Email: <a href="mailto:info@ets-ae.com">info@ets-ae.com</a></p>
+                        <p><i class="fas fa-phone me-2"></i> Phone: <a href="tel:+971544549809">+971 544 549 809</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                // Activate the current page's nav item
-                const currentPage = window.location.pathname.split("/").pop();
-                const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === currentPage) {
-                        link.classList.add('active');
-                    }
-                });
-            });
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modalImage" alt="Modal Image" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
 
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-    </script>
+    <!-- Scripts -->
+    <!-- Defer non-critical JavaScript to prevent render-blocking -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

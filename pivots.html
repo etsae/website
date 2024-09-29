@@ -9,13 +9,20 @@
     <title>Pivots - ETS - Engineering Trading Solutions</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    
     <!-- External Libraries -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet" />
-    <link href="css/custom-styles.min.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
+
 </head>
 <body id="page-top">
+    <!-- Header -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
@@ -31,7 +38,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <p class="hero-subheading">Advanced pivot systems for efficient and reliable operation in various industrial applications.</p>
-                <a href="#services" class="btn btn-xl btn-outline-light">
+                <a href="#services" class="btn btn-xl btn-outline-light" aria-label="Explore Our Solutions">
                     Explore Our Solutions
                     <i class="fas fa-chevron-right ms-2"></i>
                 </a>
@@ -52,7 +59,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <img src="assets/img/services/pivots-system.jpg" alt="Pivots System" class="img-fluid mb-4">
+                    <img src="assets/img/services/pivots-system.jpg" alt="Pivots System" class="img-fluid mb-4" loading="lazy">
                 </div>
                 <div class="col-md-6">
                     <h3>Why Choose a Valley Center Pivot?</h3>
@@ -80,8 +87,10 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-4">
-                    <img src="assets/img/brands/valley-logo.png" alt="Valley Irrigation" class="img-fluid mb-3" style="max-width: 200px;">
+                <div class="col-md-8 col-lg-6 text-center mb-4">
+                    <div class="d-flex justify-content-center align-items-center mb-3" style="height: 150px;">
+                        <img src="assets/img/brands/valley-logo.png" alt="Valley Irrigation" class="img-fluid" style="max-width: 200px; max-height: 100%;" loading="lazy">
+                    </div>
                     <h4>Valley Irrigation</h4>
                     <p>Valley is a leader in precision irrigation solutions, renowned for their durable and efficient center pivot systems.</p>
                 </div>
@@ -93,13 +102,13 @@
                 <div class="row mb-4">
                     <!-- 8000 Series -->
                     <div class="col-md-6">
-                        <img src="assets/img/services/valley-8000-series.jpg" alt="Valley 8000 Series Center Pivot" class="img-fluid mb-3">
+                        <img src="assets/img/services/valley-8000-series.jpg" alt="Valley 8000 Series Center Pivot" class="img-fluid mb-3" loading="lazy">
                         <h4>8000 Series Center Pivot</h4>
                         <p>Top-of-the-line center pivots for long, durable life. Made in the USA, this series boasts the longest available machine and span lengths. Experience our highest-performing and most reliable center pivot.</p>
                     </div>
                     <!-- 7000 Series -->
                     <div class="col-md-6">
-                        <img src="assets/img/services/valley-7000-series.jpg" alt="Valley 7000 Series Center Pivot" class="img-fluid mb-3">
+                        <img src="assets/img/services/valley-7000-series.jpg" alt="Valley 7000 Series Center Pivot" class="img-fluid mb-3" loading="lazy">
                         <h4>7000 Series Center Pivot</h4>
                         <p>Ideal for less-demanding terrain, the 7000 Series offers cost-effective solutions without sacrificing reliability, durability, and overall performance. Available with the industry-best Valley gearbox or the lower-priced VS-7000 gearbox.</p>
                     </div>
@@ -112,31 +121,8 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script>
-        // Load header and footer
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                // Activate the current page's nav item
-                const currentPage = window.location.pathname.split('/').pop();
-                const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item');
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href') === currentPage) {
-                        link.classList.add('active');
-                        if (link.classList.contains('dropdown-item')) {
-                            link.closest('.nav-item').querySelector('.nav-link').classList.add('active');
-                        }
-                    }
-                });
-            });
-
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer-placeholder').innerHTML = data);
-    </script>
+    <!-- Defer non-critical JavaScript to prevent render-blocking -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

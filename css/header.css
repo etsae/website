@@ -1,0 +1,150 @@
+/* Custom Navbar Styles */
+#mainNav {
+    background: linear-gradient(135deg, #0064A2, #0380BA, #019BD1, #3FB499, #74B863);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    transition: padding-top 0.3s, padding-bottom 0.3s, background 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#mainNav .navbar-brand,
+#mainNav .navbar-nav .nav-link {
+    color: #ffffff; /* White text */
+    transition: color 0.3s;
+}
+
+#mainNav .navbar-nav .nav-link:hover,
+#mainNav .navbar-nav .nav-link:focus {
+    color: #e6f7ff; /* Very light blue on hover/focus */
+}
+
+#mainNav .navbar-toggler {
+    border-color: #ffffff; /* White border for mobile toggle */
+}
+
+#mainNav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Active link style */
+#mainNav .navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background for active link */
+    color: #ffffff; /* White text for active link */
+    border-radius: 4px;
+}
+
+/* Dropdown styles */
+#mainNav .dropdown-menu {
+    background-color: #f0f9ff; /* Very light blue background for dropdown */
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#mainNav .dropdown-item {
+    color: #0064A2; /* Dark blue text for dropdown items */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#mainNav .dropdown-item:hover,
+#mainNav .dropdown-item:focus {
+    background-color: #e6f7ff; /* Light blue on hover/focus */
+    color: #00B0BF; /* Teal text on hover/focus */
+}
+
+body {
+    padding-top: 76px; /* Adjust this value based on your navbar height */
+}
+
+.hero-section {
+    margin-top: -76px; /* Negative margin to counteract the body padding */
+    padding-top: 76px; /* Add padding to push content below the navbar */
+}
+
+/* Shrink navbar on scroll */
+.navbar-shrink {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    background: linear-gradient(135deg, #004c7a, #026a9d, #0185b3, #338f7f, #5a9a4d); /* Darker gradient when shrunk */
+}
+
+.navbar-shrink .navbar-brand,
+.navbar-shrink .navbar-nav .nav-link {
+    color: #ffffff; /* White text when shrunk */
+}
+
+.navbar-shrink .navbar-nav .nav-link:hover,
+.navbar-shrink .navbar-nav .nav-link:focus {
+    color: #E6F2FF; /* Very light blue on hover/focus when shrunk */
+}
+
+.navbar-shrink .navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background for active link when shrunk */
+    color: #ffffff; /* White text for active link when shrunk */
+}
+
+/* Additional styles for a more nature-inspired look */
+#mainNav .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+#mainNav .nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+#mainNav .nav-link::before {
+    content: '🌊'; /* Wave emoji for water/sustainability theme */
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease, left 0.3s ease;
+}
+
+#mainNav .nav-link:hover::before {
+    opacity: 1;
+    left: 5px;
+}
+
+/* Remove the existing underline effect */
+#mainNav .nav-link::after {
+    display: none;
+}
+
+/* Logo Text Styles */
+#ets-logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Changed to bold */
+    font-size: 1.3rem; /* Decreased from 1.5rem */
+    letter-spacing: 1px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Reduced shadow for lighter font */
+    line-height: 1.2;
+}
+
+/* Remove the underline effect */
+#ets-logo::after {
+    display: none;
+}
+
+#mainNav .navbar-brand:hover #ets-logo {
+    transform: translateY(-2px);
+}
+
+/* Override any conflicting styles */
+#mainNav .navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+/* ... rest of the existing code ... */
