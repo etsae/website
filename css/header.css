@@ -132,9 +132,25 @@ body {
     line-height: 1.2;
 }
 
-/* Remove the underline effect */
-#ets-logo::after {
+/* Full logo text */
+#ets-logo .full-logo {
     display: none;
+}
+
+/* Short logo text */
+#ets-logo .short-logo {
+    display: inline-block;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    #ets-logo .full-logo {
+        display: inline-block;
+    }
+    
+    #ets-logo .short-logo {
+        display: none;
+    }
 }
 
 #mainNav .navbar-brand:hover #ets-logo {
