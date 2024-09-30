@@ -30,6 +30,50 @@
     <style>
         /* Add critical CSS here if necessary */
     </style>
+
+    <!-- Add this style block in the head section or in your CSS file -->
+    <style>
+        #gallery-container .col-md-4 {
+            flex: 0 0 auto;
+            width: 50%; /* Makes the cards take up half the container width on medium screens */
+        }
+
+        #gallery-container .portfolio-item {
+            margin-bottom: 30px;
+        }
+
+        #gallery-container .portfolio-item .portfolio-item-caption {
+            height: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #gallery-container .portfolio-item:hover .portfolio-item-caption {
+            opacity: 0.9;
+        }
+
+        #gallery-container .portfolio-item img {
+            height: 300px; /* Increase the height of the images */
+            object-fit: cover;
+        }
+
+        @media (min-width: 992px) {
+            #gallery-container .col-md-4 {
+                width: 33.33%; /* Makes the cards take up a third of the container width on large screens */
+            }
+
+            #gallery-container .portfolio-item img {
+                height: 400px; /* Further increase the height on larger screens */
+            }
+        }
+
+        /* Add a media query for smaller screens */
+        @media (max-height: 600px) {
+            .hero-section {
+                height: auto;
+                min-height: calc(100vh - 80px);
+            }
+        }
+    </style>
 </head>
 <body id="page-top">
     <!-- Header -->
@@ -37,20 +81,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
-        <div class="hero-swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="assets/img/gallery/01-equipment-5.jpg" alt="Industrial Refrigeration Equipment" class="img-fluid" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/img/gallery/08-petrochemicals-2.jpg" alt="Climate Controlled Store" class="img-fluid" loading="lazy">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/img/gallery/10-production-lines-3.jpg" alt="Industrial Chiller" class="img-fluid" loading="lazy">
-                </div>
-            </div>
-            <div class="swiper-pagination"></div> <!-- Added pagination for better Swiper navigation -->
-        </div>
+        <div class="hero-image" style="background-image: url('assets/img/gallery/01-equipment-11.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="container h-100 d-flex align-items-center justify-content-center">
             <div class="hero-content text-center">
@@ -135,7 +166,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             
-            <div id="gallery-container">
+            <div id="gallery-container" class="row g-4">
                 <!-- Gallery items will be dynamically inserted here -->
             </div>
         </div>
