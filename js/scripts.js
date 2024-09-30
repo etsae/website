@@ -266,7 +266,15 @@ window.addEventListener('DOMContentLoaded', event => {
             images: [
                 "assets/img/gallery/11-quick-freezing-and-glazing-1.jpg",
                 "assets/img/gallery/11-quick-freezing-and-glazing-2.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-3.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-4.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-5.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-6.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-7.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-8.jpg",
+                "assets/img/gallery/11-quick-freezing-and-glazing-9.jpg",
             ]
+
         },
         {
             title: "Vacuum Freeze Dry",
